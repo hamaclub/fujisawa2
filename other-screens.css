@@ -1,0 +1,181 @@
+/* other-screens.css: 動画、AR、情報、マイページ画面のスタイル */
+
+.screen h2 {
+    color: var(--color-primary);
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.screen-description {
+    color: #666;
+    margin-bottom: 20px;
+    font-size: 0.9em;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+/* ===== 動画で知る (Video Screen) ===== */
+.video-list {
+    display: grid;
+    gap: 15px;
+}
+
+.video-item {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.video-thumbnail {
+    width: 60px;
+    height: 60px;
+    background-color: var(--color-accent);
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+}
+
+.video-thumbnail i {
+    font-size: 2em;
+    color: var(--color-text-light);
+}
+
+.video-item h3 {
+    font-size: 1.1em;
+    margin-bottom: 3px;
+    color: var(--color-text-dark);
+}
+
+.video-item p {
+    font-size: 0.8em;
+    color: #888;
+}
+
+/* ===== ARで体験 (AR Screen) ===== */
+.ar-feature-box {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 15px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ar-feature-box i {
+    color: var(--color-alert); /* 警戒色 */
+    margin-bottom: 10px;
+}
+
+.ar-feature-box h3 {
+    margin-bottom: 5px;
+}
+
+.primary-ar {
+    background-color: var(--color-alert); /* 危険を連想させる赤系 */
+    color: var(--color-text-light);
+    margin-top: 15px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ar-note {
+    text-align: center;
+    font-size: 0.8em;
+    color: #a00;
+    margin-top: 20px;
+}
+
+/* ===== 市の取り組み (Info Screen) ===== */
+.info-accordion details {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.info-accordion summary {
+    font-weight: bold;
+    padding: 15px;
+    cursor: pointer;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    color: var(--color-primary);
+}
+
+.info-accordion p {
+    padding: 10px 15px 5px;
+    font-size: 0.9em;
+    color: #555;
+}
+
+.info-link {
+    display: inline-block;
+    color: var(--color-accent);
+    text-decoration: none;
+    padding: 0 15px 15px;
+    font-weight: bold;
+}
+
+/* ===== マイページ (MyPage Screen) ===== */
+.progress-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.progress-container h3 {
+    color: var(--color-text-dark);
+    border-bottom: 1px dashed #ddd;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.progress-bar-shell {
+    height: 15px;
+    background-color: #eee;
+    border-radius: 7px;
+    overflow: hidden;
+    margin: 10px 0;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: var(--color-primary);
+    transition: width 0.5s ease-in-out;
+}
+
+.badge-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.badge {
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 0.8em;
+    font-weight: bold;
+    color: var(--color-text-light);
+}
+
+.badge i {
+    margin-right: 5px;
+}
+
+.badge.completed {
+    background-color: #4CAF50; /* Green */
+}
+
+.badge.incomplete {
+    background-color: #999;
+    opacity: 0.7;
+}
