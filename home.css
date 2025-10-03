@@ -1,9 +1,54 @@
 /* home.css: ホーム画面専用スタイル */
 
+/* ===== ヘッダーの改良 ===== */
+.app-header {
+    display: block;
+    text-align: center;
+    padding: 10px 0;
+    margin-bottom: 10px;
+    border-bottom: none;
+}
+
+.header-info {
+    margin-bottom: 5px;
+}
+
+.app-header h1 {
+    font-size: 1.8em;
+    font-weight: 900;
+    color: var(--color-primary);
+}
+
+.subtitle {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.disaster-level {
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    color: var(--color-text-light);
+    background-color: #2ecc71; /* 平時の色 */
+    font-size: 0.9em;
+    display: inline-block;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.disaster-level.danger {
+    background-color: var(--color-alert); /* 警戒時の色 */
+}
+
+/* ===== ふじキュンナビゲーター ===== */
 .fujikyun-navigator {
     display: flex;
     align-items: flex-end;
+    margin-top: 15px;
     margin-bottom: 25px;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .fujikyun-img {
@@ -14,33 +59,42 @@
 
 .fujikyun-message-box {
     flex-grow: 1;
-    background-color: #fff;
-    border: 3px solid var(--color-primary);
+    background-color: var(--color-bg);
+    border: 2px solid var(--color-primary);
     border-radius: 15px;
-    padding: 15px;
+    padding: 10px 15px;
     position: relative;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .fujikyun-message-box::before {
     content: '';
     position: absolute;
-    bottom: -15px;
-    left: 10px;
+    bottom: 5px;
+    left: -15px; /* 左側に出るように調整 */
     width: 0;
     height: 0;
     border-style: solid;
-    border-width: 15px 10px 0 10px;
-    border-color: var(--color-primary) transparent transparent transparent;
-    transform: rotate(45deg);
+    border-width: 8px 15px 8px 0;
+    border-color: transparent var(--color-primary) transparent transparent;
 }
 
 .fujikyun-message-box p {
     font-weight: bold;
     line-height: 1.5;
+    font-size: 0.95em;
 }
 
-/* メインメニューのグリッドレイアウト */
+/* ===== メインメニュー ===== */
+.section-title {
+    font-size: 1.2em;
+    color: var(--color-text-dark);
+    margin-top: 25px;
+    margin-bottom: 15px;
+    border-bottom: 3px solid var(--color-accent);
+    padding-bottom: 5px;
+    font-weight: bold;
+}
+
 .main-menu-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* 2列 */
@@ -54,21 +108,22 @@
     justify-content: center;
     padding: 20px 10px;
     background-color: #fff;
-    border: none;
+    border: 1px solid #ddd;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     cursor: pointer;
-    transition: transform 0.1s;
+    transition: transform 0.1s, box-shadow 0.2s;
     min-height: 120px;
 }
 
-.menu-item:hover:not(.disabled) {
+.menu-item:hover {
     transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .menu-item i {
     font-size: 2.5em;
-    color: var(--color-accent);
+    color: var(--color-primary); /* ふじキュン色を強調 */
     margin-bottom: 5px;
 }
 
@@ -76,9 +131,4 @@
     font-size: 0.9em;
     font-weight: bold;
     color: var(--color-text-dark);
-}
-
-.menu-item.disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
 }
