@@ -1,0 +1,86 @@
+/* quiz.css: クイズ画面専用スタイル */
+
+.quiz-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.quiz-header h2 {
+    color: var(--color-primary);
+}
+
+.score-display {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #e74c3c;
+}
+
+.quiz-area {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.question-text {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.options-container {
+    display: grid;
+    gap: 10px;
+}
+
+.option-button {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--color-bg);
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    text-align: left;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.option-button:hover:not(.correct):not(.incorrect) {
+    background-color: #eee;
+    border-color: var(--color-primary);
+}
+
+/* 選択後の色分け */
+.option-button.correct {
+    background-color: #c8e6c9; /* 緑系 */
+    border-color: #4caf50;
+    font-weight: bold;
+}
+
+.option-button.incorrect {
+    background-color: #ffcdd2; /* 赤系 */
+    border-color: #f44336;
+    font-weight: bold;
+}
+
+.action-button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background-color: var(--color-accent);
+    color: var(--color-text-light);
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.action-button:hover {
+    background-color: #e68a00;
+}
