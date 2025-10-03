@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ふじキュン！防災レスキュー</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="quiz.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <main id="app-content">
+        <section id="home-screen" class="screen active">
+            <header class="app-header">
+                <h1>🌊 藤沢市 防災レスキュー</h1>
+                <div class="disaster-level danger">🚨 警戒レベル：平時</div>
+            </header>
+            
+            <div class="fujikyun-navigator">
+                <img src="ふじきゅん.png" alt="ふじキュン！" class="fujikyun-img">
+                <div class="fujikyun-message-box">
+                    <p id="fujikyun-message">今日から一緒に防災を学んで、藤沢をレスキューするキュン！</p>
+                </div>
+            </div>
+
+            <div class="main-menu-grid">
+                <button class="menu-item" data-screen="quiz-screen">
+                    <i class="fas fa-question-circle"></i>
+                    <span>クイズで学ぶ</span>
+                </button>
+                <button class="menu-item disabled">
+                    <i class="fas fa-video"></i>
+                    <span>動画で知る</span>
+                </button>
+                <button class="menu-item disabled">
+                    <i class="fas fa-street-view"></i>
+                    <span>ARで体験</span>
+                </button>
+                <button class="menu-item disabled">
+                    <i class="fas fa-info-circle"></i>
+                    <span>市の取り組み</span>
+                </button>
+            </div>
+        </section>
+
+        <section id="quiz-screen" class="screen hidden">
+            <header class="quiz-header">
+                <h2>クイズチャレンジ！</h2>
+                <div class="score-display">スコア: <span id="current-score">0</span>点</div>
+            </header>
+            <div class="quiz-area">
+                <p class="question-text" id="question-text">クイズの準備中...</p>
+                <div class="options-container" id="options-container">
+                    </div>
+                <button id="next-button" class="action-button hidden">次の問題へ</button>
+            </div>
+        </section>
+        
+        </main>
+
+    <footer class="nav-bar">
+        <button class="nav-button active" data-screen="home-screen">
+            <i class="fas fa-home"></i>
+            <span class="nav-text">ホーム</span>
+        </button>
+        <button class="nav-button" data-screen="quiz-screen">
+            <i class="fas fa-brain"></i>
+            <span class="nav-text">学ぶ</span>
+        </button>
+        <button class="nav-button" data-screen="experience-screen">
+            <i class="fas fa-vr-cardboard"></i>
+            <span class="nav-text">体験</span>
+        </button>
+        <button class="nav-button" data-screen="info-screen">
+            <i class="fas fa-map-marked-alt"></i>
+            <span class="nav-text">知る</span>
+        </button>
+        <button class="nav-button" data-screen="mypage-screen">
+            <i class="fas fa-user"></i>
+            <span class="nav-text">マイページ</span>
+        </button>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
