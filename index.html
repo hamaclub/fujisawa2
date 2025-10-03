@@ -7,15 +7,22 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="quiz.css">
+    <link rel="stylesheet" href="other-screens.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
     <main id="app-content">
+
         <section id="home-screen" class="screen active">
             <header class="app-header">
-                <h1>🌊 藤沢市 防災レスキュー</h1>
-                <div class="disaster-level danger">🚨 警戒レベル：平時</div>
+                <div class="header-info">
+                    <h1>ふじキュン！防災レスキュー</h1>
+                    <p class="subtitle">キュンとするまち。藤沢の安心を守るキュン！</p>
+                </div>
+                <div class="disaster-level danger">
+                    <i class="fas fa-bell"></i> 警戒レベル：平時
+                </div>
             </header>
             
             <div class="fujikyun-navigator">
@@ -25,20 +32,21 @@
                 </div>
             </div>
 
+            <h2 class="section-title">チャレンジメニュー</h2>
             <div class="main-menu-grid">
                 <button class="menu-item" data-screen="quiz-screen">
                     <i class="fas fa-question-circle"></i>
                     <span>クイズで学ぶ</span>
                 </button>
-                <button class="menu-item disabled">
+                <button class="menu-item" data-screen="video-screen">
                     <i class="fas fa-video"></i>
                     <span>動画で知る</span>
                 </button>
-                <button class="menu-item disabled">
+                <button class="menu-item" data-screen="ar-screen">
                     <i class="fas fa-street-view"></i>
                     <span>ARで体験</span>
                 </button>
-                <button class="menu-item disabled">
+                <button class="menu-item" data-screen="info-screen">
                     <i class="fas fa-info-circle"></i>
                     <span>市の取り組み</span>
                 </button>
@@ -57,30 +65,117 @@
                 <button id="next-button" class="action-button hidden">次の問題へ</button>
             </div>
         </section>
+
+        <section id="video-screen" class="screen hidden">
+            <h2>動画で知る <i class="fas fa-film"></i></h2>
+            <p class="screen-description">災害時の行動や避難の知識を動画で確認しよう！</p>
+            <div class="video-list">
+                <div class="video-item">
+                    <div class="video-thumbnail">
+                        <i class="fas fa-play-circle"></i>
+                    </div>
+                    <div>
+                        <h3>地震発生！その時どうする？</h3>
+                        <p>初期行動と身の守り方を知ろう。（5分）</p>
+                    </div>
+                </div>
+                <div class="video-item">
+                    <div class="video-thumbnail">
+                        <i class="fas fa-play-circle"></i>
+                    </div>
+                    <div>
+                        <h3>津波から逃げる！藤沢の避難ルート</h3>
+                        <p>場所ごとの避難場所と経路の確認。（3分）</p>
+                    </div>
+                </div>
+                <div class="video-item">
+                    <div class="video-thumbnail">
+                        <i class="fas fa-play-circle"></i>
+                    </div>
+                    <div>
+                        <h3>防災バッグには何を入れる？</h3>
+                        <p>小中学生でもできる準備品リスト。（4分）</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="ar-screen" class="screen hidden">
+            <h2>ARで体験 <i class="fas fa-street-view"></i></h2>
+            <p class="screen-description">スマホを通して、藤沢で起こりうる被害をリアルに体験！</p>
+
+            <div class="ar-feature-box">
+                <i class="fas fa-house-damage fa-3x"></i>
+                <h3>津波浸水シミュレーション</h3>
+                <p>自宅周辺の想定浸水深をARで再現します。</p>
+                <button class="action-button primary-ar">
+                    <i class="fas fa-camera"></i> AR体験スタート！
+                </button>
+            </div>
+
+            <div class="ar-feature-box">
+                <i class="fas fa-road fa-3x"></i>
+                <h3>避難ルート危険箇所チェック</h3>
+                <p>避難経路にある危険な場所（ブロック塀など）を確認します。</p>
+                <button class="action-button primary-ar">
+                    <i class="fas fa-camera"></i> AR体験スタート！
+                </button>
+            </div>
+            
+            <p class="ar-note">※この機能を利用するには、端末の位置情報とカメラの許可が必要です。</p>
+        </section>
+
+        <section id="info-screen" class="screen hidden">
+            <h2>市の取り組み <i class="fas fa-map-marked-alt"></i></h2>
+            <p class="screen-description">藤沢市が取り組んでいる防災活動や災害情報を確認できます。</p>
+
+            <div class="info-accordion">
+                <details open>
+                    <summary>藤沢市ハザードマップ</summary>
+                    <p>津波、洪水、土砂災害などのハザードマップをウェブサイトで確認できます。</p>
+                    <a href="#" class="info-link">マップを見る (外部サイトへ)</a>
+                </details>
+                <details>
+                    <summary>地域の防災訓練情報</summary>
+                    <p>お住まいの地域の防災訓練の年間スケジュールや参加方法です。</p>
+                    <a href="#" class="info-link">最新情報はこちら</a>
+                </details>
+                <details>
+                    <summary>学校の防災教育事例</summary>
+                    <p>小中学校での防災教育の具体例や、家庭で取り組めるワークシートを公開しています。</p>
+                    <a href="#" class="info-link">事例を見る</a>
+                </details>
+            </div>
+        </section>
         
-        </main>
+        <section id="mypage-screen" class="screen hidden">
+            <h2>マイページ <i class="fas fa-user-circle"></i></h2>
+            <div class="progress-container">
+                <h3>あなたの防災レベル</h3>
+                <div class="progress-bar-shell">
+                    <div id="progress-bar" class="progress-bar" style="width: 50%;"></div>
+                </div>
+                <p>現在の達成率: <span id="progress-percent">50</span>%</p>
+            </div>
+            
+            <h3>獲得バッジ</h3>
+            <div class="badge-list">
+                <span class="badge completed"><i class="fas fa-medal"></i> 初期行動マスター</span>
+                <span class="badge incomplete"><i class="fas fa-medal"></i> 津波知識王</span>
+                <span class="badge completed"><i class="fas fa-medal"></i> 藤沢っ子認定</span>
+                <span class="badge incomplete"><i class="fas fa-medal"></i> AR体験クリア</span>
+            </div>
+        </section>
+
+    </main>
 
     <footer class="nav-bar">
-        <button class="nav-button active" data-screen="home-screen">
-            <i class="fas fa-home"></i>
-            <span class="nav-text">ホーム</span>
-        </button>
-        <button class="nav-button" data-screen="quiz-screen">
-            <i class="fas fa-brain"></i>
-            <span class="nav-text">学ぶ</span>
-        </button>
-        <button class="nav-button" data-screen="experience-screen">
-            <i class="fas fa-vr-cardboard"></i>
-            <span class="nav-text">体験</span>
-        </button>
-        <button class="nav-button" data-screen="info-screen">
-            <i class="fas fa-map-marked-alt"></i>
-            <span class="nav-text">知る</span>
-        </button>
-        <button class="nav-button" data-screen="mypage-screen">
-            <i class="fas fa-user"></i>
-            <span class="nav-text">マイページ</span>
-        </button>
+        <button class="nav-button active" data-screen="home-screen"><i class="fas fa-home"></i><span class="nav-text">ホーム</span></button>
+        <button class="nav-button" data-screen="quiz-screen"><i class="fas fa-brain"></i><span class="nav-text">学ぶ</span></button>
+        <button class="nav-button" data-screen="video-screen"><i class="fas fa-video"></i><span class="nav-text">動画</span></button>
+        <button class="nav-button" data-screen="ar-screen"><i class="fas fa-street-view"></i><span class="nav-text">体験</span></button>
+        <button class="nav-button" data-screen="info-screen"><i class="fas fa-map-marked-alt"></i><span class="nav-text">情報</span></button>
+        <button class="nav-button" data-screen="mypage-screen"><i class="fas fa-user"></i><span class="nav-text">マイページ</span></button>
     </footer>
 
     <script src="app.js"></script>
