@@ -27,6 +27,22 @@ document.addEventListener('DOMContentLoaded', () => {
             });
             // data-screenが一致するナビボタンがあればactiveにする
             document.querySelector(`.nav-button[data-screen="${targetScreenId}"]`)?.classList.add('active');
+            
+            // 画面遷移時にふじキュンのメッセージを更新 (ホーム画面以外)
+            const fujikyunMessage = document.getElementById('fujikyun-message');
+            if (fujikyunMessage && targetScreenId !== 'quiz-screen') {
+                 if (targetScreenId === 'video-screen') {
+                    fujikyunMessage.textContent = '動画でしっかり知識を定着させるキュン！';
+                } else if (targetScreenId === 'ar-screen') {
+                    fujikyunMessage.textContent = 'ARでリアルな体験をするキュン！すごく大事だよ！';
+                } else if (targetScreenId === 'info-screen') {
+                    fujikyunMessage.textContent = '藤沢市の取り組みも知っておくキュン！';
+                } else if (targetScreenId === 'mypage-screen') {
+                    fujikyunMessage.textContent = '頑張ってるキュン！進捗を確認するキュン！';
+                } else if (targetScreenId === 'home-screen') {
+                    fujikyunMessage.textContent = 'キュンとするまち、藤沢の防災を一緒に学ぼうキュン！';
+                }
+            }
         });
     });
 
@@ -44,10 +60,16 @@ document.addEventListener('DOMContentLoaded', () => {
             answerIndex: 1,
             fujikyun_tip: "通電火災を防ぐための大切な行動だキュン！避難する時は忘れずにね！"
         },
-        // さらに問題を追加...
+        {
+            question: "藤沢市で災害時、家族と連絡が取れない時のために、事前に決めておくべき場所は何キュン？",
+            options: ["集合場所", "通学路", "コンビニ", "公園のベンチ"],
+            answerIndex: 0,
+            fujikyun_tip: "災害用伝言ダイヤルや、離れた場所にいる家族と会うための『集合場所』を決めておくキュン！"
+        },
     ];
 
     let currentQuizIndex = 0;
+    // localStorageからスコアを読み込み、存在しなければ0とする
     let score = parseInt(localStorage.getItem('quiz_score')) || 0;
     
     const questionTextElement = document.getElementById('question-text');
@@ -62,14 +84,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // クイズの表示
     function loadQuiz() {
         if (currentQuizIndex >= quizData.length) {
-            questionTextElement.textContent = "おめでとう！今日のクイズは全部クリアだキュン！";
+            questionTextElement.textContent = "おめでとう！今日のクイズは全部クリアだキュン！🎉";
             optionsContainer.innerHTML = `<p>また明日新しい問題にチャレンジしてね！</p>`;
             nextButton.classList.add('hidden');
             return;
         }
 
         const currentQuiz = quizData[currentQuizIndex];
-        questionTextElement.textContent = currentQuiz.question;
+        questionTextElement.textContent = `Q${currentQuizIndex + 1}. ${currentQuiz.question}`;
         optionsContainer.innerHTML = '';
         nextButton.classList.add('hidden');
 
