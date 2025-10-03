@@ -3,6 +3,7 @@
     --color-fujikyun: #7ed6df; /* ふじキュンのヒスイ色 */
     --color-primary: var(--color-fujikyun);
     --color-accent: #ff9f43; /* オレンジ */
+    --color-alert: #e74c3c; /* 警戒色 */
     --color-text-dark: #333;
     --color-text-light: #fff;
     --color-bg: #f4f6f8;
@@ -32,32 +33,26 @@ body {
     display: none !important;
 }
 
-/* ヘッダー */
-.app-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: var(--padding-base) 0;
-    margin-bottom: var(--padding-base);
-    border-bottom: 2px solid #ddd;
-}
-
-.app-header h1 {
-    font-size: 1.4em;
-    color: var(--color-primary);
-}
-
-.disaster-level {
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-weight: bold;
+/* アクションボタンの基本スタイル */
+.action-button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background-color: var(--color-accent);
     color: var(--color-text-light);
-    background-color: #2ecc71; /* 平時の色 */
-    font-size: 0.8em;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
 }
-.disaster-level.danger {
-    background-color: #e74c3c; /* 警戒時の色 */
+
+.action-button:hover {
+    background-color: #e68a00;
 }
+
 
 /* フッターナビゲーション */
 .nav-bar {
